@@ -10,7 +10,7 @@ enum AppConfig {
     static let slug = "scam"
 
     /// Numeric App Store id once the app record exists (used in the "invite a parent" message).
-    static let appStoreID: String? = nil
+    static let appStoreID: String? = "6828638422"
 
     static let supportEmail = "support@namu3gru.com"
     static let privacyURL = URL(string: "https://scamsense.namu3gru.com/privacy")!

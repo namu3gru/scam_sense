@@ -9,11 +9,19 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 # The app can't talk to the backend without the real token (README section 5).
+# Escape hatches, both explicit:
+#   ALLOW_PLACEHOLDER_TOKEN=1 LOCAL=1   signed local export only (no upload)
+#   TESTFLIGHT_PLACEHOLDER=1            upload for TestFlight while the server isn't live (AI checks fail);
+#                                       never submit such a build for review
 if grep -q 'REPLACE_WITH_APP_TOKEN' ScamSense/Core/AppConfig.swift; then
-  echo "error: ScamSense/Core/AppConfig.swift still has REPLACE_WITH_APP_TOKEN. Paste the real APP_TOKEN first." >&2
-  [[ -n "${ALLOW_PLACEHOLDER_TOKEN:-}" ]] || exit 1
-  echo "warning: ALLOW_PLACEHOLDER_TOKEN set, building anyway (local test only, never upload this)." >&2
-  [[ -n "${LOCAL:-}" ]] || { echo "error: refusing to upload a build with the placeholder token." >&2; exit 1; }
+  if [[ -n "${TESTFLIGHT_PLACEHOLDER:-}" ]]; then
+    echo "warning: uploading with the placeholder token for TestFlight only. AI checks won't work in this build." >&2
+  elif [[ -n "${ALLOW_PLACEHOLDER_TOKEN:-}" && -n "${LOCAL:-}" ]]; then
+    echo "warning: placeholder token, local export only." >&2
+  else
+    echo "error: ScamSense/Core/AppConfig.swift still has REPLACE_WITH_APP_TOKEN. Paste the real APP_TOKEN first." >&2
+    exit 1
+  fi
 fi
 ASC_KEY_ID=NNSGPWHMLB
 ASC_ISSUER=bb989c3b-f475-4517-80f3-ce12ae4e0c86

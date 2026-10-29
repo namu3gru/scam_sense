@@ -282,20 +282,16 @@ ScamSense gives an AI second opinion on whether a pasted message, link, phone nu
 ## 9. 출시 전 체크리스트
 - [x] (2026-10-29) 번들 ID `com.namu3gru.ScamSense` 등록 + 배포 프로필 "ScamSense App Store" 생성·설치(API). 서명 빌드: `ios/release.sh` (`LOCAL=1`이면 업로드 없이 .ipa만). `AppConfig.swift`에 `REPLACE_WITH_APP_TOKEN`이 남아 있으면 release.sh가 멈춥니다(로컬 서명 테스트만 `ALLOW_PLACEHOLDER_TOKEN=1 LOCAL=1`).
 - [x] 6.9" 스크린샷 세트(1320×2868, 캡션 포함) en 7장 `screenshots/appstore/en/`, ko 7장 `screenshots/appstore/ko/`. 원본 캡처: `U=<시뮬레이터 UDID> tools/shot69.sh`, 캡션 합성: `swift tools/frame_shots.swift` (예시 데이터만 사용, 서버 호출 없음).
+- [x] (2026-10-29) App Store Connect 앱 레코드(Apple ID 6828638422, SKU `scamsense`). `AppConfig.appStoreID` 입력.
+- [x] (API) 구독 그룹 "ScamSense Pro" + 연간($29.99/₩44,000, 1주 무료 체험)·월간($4.99/₩6,900), 미국·한국·캐나다 판매, 나머지 국가도 Apple 환산 가격 등록: `ASC=<asc> tools/asc_setup.py` (가격 변경: `tools/asc_prices.py`)
+- [x] (API) 스토어 문구·스크린샷·카테고리(유틸리티/라이프스타일)·연령 4+·저작권·심사 연락처/메모·무료·판매 국가·빌드 연결·구독 심사용 스크린샷: `tools/asc_metadata.py`
+- [x] (API) TestFlight 내부 그룹 "Internal"(모든 빌드) + 테스트 안내 문구: `tools/asc_testflight.py`. 첫 빌드는 서버가 없어 임시 토큰으로 업로드(`TESTFLIGHT_PLACEHOLDER=1 ios/release.sh`) — **이 빌드는 심사 제출 금지**.
+- [ ] (웹) "Internal" 그룹에 본인 추가, App Privacy 답변, 결제 유예 기간 16일 켜기
 - [ ] 서버(apps_api) 배포 + 실제 `APP_TOKEN`, 결제 유예 기간(grace period) 중인 구독자도 Pro로 인정하도록 서버 보완 필요(아래 11번).
 - [ ] `AppConfig.swift`의 `appToken`을 실제 값으로 교체 (위 5번)
-- [ ] App Store Connect에서 앱 생성: 번들 ID `com.namu3gru.ScamSense`, SKU 예: `scamsense01`, 기본 언어 영어(미국), 한국어 추가
-- [ ] 구독 그룹 **"ScamSense Pro"** 생성 + 그룹 표시 이름 en "ScamSense Pro" / ko "스캠센스 Pro"
-  - [ ] `com.namu3gru.ScamSense.pro.yearly` — 1년, $29.99 / ₩44,000, 소개 혜택: **무료 1주** (신규 구독자)
-  - [ ] `com.namu3gru.ScamSense.pro.monthly` — 1개월, $4.99 / ₩6,900
-  - [ ] 각 상품 en/ko 표시 이름·설명, 심사용 스크린샷(페이월 화면 `screenshots/05_paywall.png`) 첨부
 - [ ] 서버 `.env`에 `APPLE_APP_ID_SCAM=<앱 숫자 ID>` 추가 (프로덕션 구매 검증용)
-- [ ] `apps_api/site/scam/` 페이지를 https://scamsense.namu3gru.com 에 배포 후 https://scamsense.namu3gru.com/privacy , /terms , /support 열리는지 확인
-- [ ] App Store Connect 앱 정보: 개인정보 처리방침 URL = `https://scamsense.namu3gru.com/privacy`, 지원 URL = `https://scamsense.namu3gru.com/support`, 이용약관(EULA)은 Apple 표준 사용
-- [ ] **앱 개인정보(App Privacy) 답변**: 추적 안 함. 수집 항목 → "기타 사용자 콘텐츠", "사진 또는 비디오"(스크린샷), "기기 ID", "구입 내역" 모두 **앱 기능 목적, 사용자와 연결 안 됨**
-- [ ] **연령 등급**: 설문에 정직하게 답하세요(18+ 불필요). 사기 관련 교육 내용이라 대체로 **4+ 또는 9+** 예상 — 폭력/성인 콘텐츠 없음
-- [ ] 카테고리: 유틸리티 (보조: 라이프스타일)
-- [ ] 스크린샷 세트(6.9")는 이후 별도 제작 — 위 테스트 훅 사용
+- [x] (2026-10-29 확인, 200 OK) `apps_api/site/scam/` 페이지를 https://scamsense.namu3gru.com 에 배포 후 https://scamsense.namu3gru.com/privacy , /terms , /support 열리는지 확인
+- [ ] (웹) **앱 개인정보(App Privacy) 답변**: 추적 안 함. 수집 항목 → "기타 사용자 콘텐츠", "사진 또는 비디오"(스크린샷), "기기 ID", "구입 내역" 모두 **앱 기능 목적, 사용자와 연결 안 됨** (IP 주소는 남용 방지용 하루 횟수만 세고 내용은 저장하지 않음)
 - [ ] Xcode › Product › Archive → TestFlight 업로드 → 샌드박스 계정으로 구매·복원·402 흐름 확인
 - [ ] (선택) 가족 공유(Family Sharing) 켜기 검토 — "부모님 지키기"와 잘 맞지만 **한 번 켜면 끌 수 없음**. 서버는 구독 1개당 기기 5대까지 허용.
 
