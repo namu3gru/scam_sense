@@ -82,6 +82,7 @@ final class AppModel {
         if d.object(forKey: "uiLargeText") != nil { largeText = d.bool(forKey: "uiLargeText") }
         if let c = d.string(forKey: "uiCountry").flatMap(Country.init(rawValue:)) { country = c }
         if d.bool(forKey: "uiDemo") { seedDemo() }
+        if d.bool(forKey: "uiNoBanner") { bannerDismissed = true }
         if let raw = d.string(forKey: "uiScreen") { launchScreen = LaunchScreen(rawValue: raw) }
         prefill = d.string(forKey: "uiPrefill")
         autoCheck = d.bool(forKey: "uiAutoCheck")

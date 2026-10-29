@@ -38,7 +38,7 @@ struct ResultView: View {
             guard UserDefaults.standard.bool(forKey: "uiResultScroll") else { return }
             showAlreadyActed = true
             Task {
-                try? await Task.sleep(for: .seconds(1.5))
+                try? await Task.sleep(for: .seconds(4))
                 withAnimation { proxy.scrollTo("todo", anchor: .top) }
             }
         }

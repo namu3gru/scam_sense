@@ -10,7 +10,13 @@ mkdir -p "$(dirname "$OUT")"
 if [ "$L" = ko ]; then LA="-AppleLanguages (ko) -AppleLocale ko_KR -uiCountry KR"; else LA="-AppleLanguages (en) -AppleLocale en_US -uiCountry US"; fi
 xcrun simctl terminate $U $B >/dev/null 2>&1
 xcrun simctl launch $U $B $LA -uiReset YES -uiOnboarded YES -uiConsent YES -uiDemo YES \
-  -apiBaseURL http://127.0.0.1:9 -uiConfirmClear NO -uiRestore NO "$@" >/dev/null
+  -apiBaseURL http://127.0.0.1:9 -uiConfirmClear NO -uiRestore NO -uiNoBanner YES "$@" >/dev/null
 sleep ${WAIT:-6}
-xcrun simctl io $U screenshot "$OUT" >/dev/null 2>&1
+# A busy Mac can still show the white launch screen (~90 KB PNG): retake until the app has drawn.
+for _ in 1 2 3 4 5 6 7 8 9 10; do
+  xcrun simctl io $U screenshot "$OUT" >/dev/null 2>&1
+  [ "$(stat -f %z "$OUT")" -gt 150000 ] && break
+  sleep 4
+done
+[ -n "${SETTLE:-}" ] && { sleep $SETTLE; xcrun simctl io $U screenshot "$OUT" >/dev/null 2>&1; }
 echo "$OUT"

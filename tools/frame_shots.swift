@@ -10,7 +10,7 @@ let shots: [(String, [String: (String, String)])] = [
                    "ko": ("사기일까?\n누르기 전에 확인", "문자·링크·스크린샷을 붙여 넣기만")]),
     ("2_result",  ["en": ("A clear answer\nin plain words", "Red, amber or green, with the reasons"),
                    "ko": ("쉬운 말로\n한눈에 판정", "빨강·노랑·초록 신호등과 이유")]),
-    ("3_actions", ["en": ("Know what to do\nnext", "Even if you already clicked or paid"),
+    ("3_actions", ["en": ("What to do next,\nstep by step", "Even if you already clicked or paid"),
                    "ko": ("지금 무엇을\n해야 할지", "이미 눌렀거나 돈을 보냈을 때도")]),
     ("4_quiz",    ["en": ("Spot the scam:\na daily quiz", "Five real-looking messages a day"),
                    "ko": ("매일 5문제\n사기 찾기 퀴즈", "진짜 같은 메시지로 연습")]),

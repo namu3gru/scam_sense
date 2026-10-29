@@ -61,6 +61,7 @@ struct HistoryView: View {
                         .padding(.leading, 16)
                         .padding(.top, 2)
                         .accessibilityLabel(Text("Back to history"))
+                        .opacity(UserDefaults.standard.bool(forKey: "uiResultScroll") ? 0 : 1)  // screenshot hook
                     }
             }
         }

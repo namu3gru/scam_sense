@@ -43,7 +43,11 @@ struct QuizHomeView: View {
             quiz.ensureToday()
             switch app.launchScreen {
             case .quiz, .quizAnswered, .quizResult, .shareCard:
-                session = QuizSession(items: quiz.today, daily: true)
+                // Test hook; wait a moment so the cover isn't dropped while the tab is still appearing.
+                Task {
+                    try? await Task.sleep(for: .seconds(1.5))
+                    session = QuizSession(items: quiz.today, daily: true)
+                }
             default: break
             }
         }
