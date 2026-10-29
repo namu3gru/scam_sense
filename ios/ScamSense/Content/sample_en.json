@@ -1,0 +1,41 @@
+{
+ "verdict": "scam",
+ "risk_score": 96,
+ "scam_type": "Fake toll payment text",
+ "headline": "This is a scam. Real toll agencies don't text links asking you to pay right away.",
+ "red_flags": [
+  {
+   "flag": "Strange link",
+   "why": "The link goes to 'tollpay-renew.top', not your state's real toll website."
+  },
+  {
+   "flag": "Pressure to act fast",
+   "why": "It threatens a $50 late fee 'today' to rush you."
+  },
+  {
+   "flag": "Unknown sender",
+   "why": "It came from a random international number, not a short code."
+  }
+ ],
+ "safe_signs": [],
+ "what_to_do": [
+  "Don't tap the link or reply.",
+  "If you're worried, log in to your toll account by typing the official website yourself.",
+  "Forward the text to 7726 (SPAM), then delete it."
+ ],
+ "if_already_acted": [
+  "If you entered card details, call the number on the back of your card and ask for a new card.",
+  "Watch your statements for charges you don't recognize."
+ ],
+ "report_to": [
+  {
+   "name": "FTC",
+   "how": "reportfraud.ftc.gov"
+  },
+  {
+   "name": "Your phone carrier",
+   "how": "Forward the text to 7726"
+  }
+ ],
+ "family_message": "Heads up: texts saying you owe a toll and need to pay through a link are scams. Don't tap them!"
+}

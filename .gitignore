@@ -1,0 +1,9 @@
+ios/build/
+.DS_Store
+xcuserdata/
+__pycache__/
+screenshots/appstore/raw/
+*.ipa
+*.xcarchive
+.env
+*.p8

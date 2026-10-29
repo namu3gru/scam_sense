@@ -1,0 +1,535 @@
+[
+ {
+  "id": "en-01",
+  "channel": "sms",
+  "sender": "+44 7412 555093",
+  "body": "Toll Services: Your vehicle has an unpaid toll balance of $6.99. To avoid a $50 late fee, pay by today: https://tollpay-renew.top/us",
+  "answer": "scam",
+  "explanation": "Toll agencies don't text payment links from foreign numbers. The odd \".top\" link and the scary late fee are the giveaways."
+ },
+ {
+  "id": "en-02",
+  "channel": "sms",
+  "sender": "ship.notice8812@mailbox-x.com",
+  "body": "Delivery Co: Your package is on hold due to an incomplete address. Update within 12 hours or it will be returned: http://redeliver-parcel.info/a7",
+  "answer": "scam",
+  "explanation": "Delivery companies don't text from random email addresses. An unexpected \"fix your address\" link is a classic way to steal card details."
+ },
+ {
+  "id": "en-03",
+  "channel": "sms",
+  "sender": "+1 (888) 555-0199",
+  "body": "YOUR BANK: A charge of $1,249.00 at ElectroMart was flagged. If this wasn't you, call our fraud department now at (888) 555-0199.",
+  "answer": "scam",
+  "explanation": "Scammers fake fraud alerts and put their own number in the text. Call the number on the back of your card instead."
+ },
+ {
+  "id": "en-04",
+  "channel": "sms",
+  "sender": "+1 (305) 555-0118",
+  "body": "Hi Mom, it's me. My phone fell in the sink so this is my new number. Can you text me back here? I need a quick favor.",
+  "answer": "scam",
+  "explanation": "\"New number, need a favor\" is a family-impersonation trick. Call your child on their old number before doing anything."
+ },
+ {
+  "id": "en-05",
+  "channel": "call",
+  "sender": "Unknown caller",
+  "body": "\"Grandma? It's me... I'm in trouble. I was in a car accident and I'm at the police station. Please don't tell Mom. My lawyer will call you about bail. He says it has to be gift cards or cash today.\"",
+  "answer": "scam",
+  "explanation": "Panic, secrecy and gift cards are the grandparent scam. Voices can be cloned with AI, so hang up and call your grandchild directly."
+ },
+ {
+  "id": "en-06",
+  "channel": "email",
+  "sender": "SecureShield Billing <invoice@secureshield-renewals.net>",
+  "subject": "Your subscription renewed: $399.99",
+  "body": "Thank you for renewing SecureShield Total Protection for 3 years. Amount charged: $399.99.\n\nDidn't authorize this? Call our refund desk within 24 hours: 1-888-555-0143.",
+  "answer": "scam",
+  "explanation": "Fake renewal invoices push you to call a \"refund desk\" that then asks for remote access or bank details. Check your real statements instead."
+ },
+ {
+  "id": "en-07",
+  "channel": "dm",
+  "sender": "@lucy.hr.recruiting",
+  "body": "Hi! I'm a recruiter for a digital marketing agency. Earn $300–$800 a day rating products from home, just 30 minutes a day. Interested? Message me on Telegram @hr_lucy_joblink 😊",
+  "answer": "scam",
+  "explanation": "Unsolicited job offers with huge pay for simple tasks are \"task scams.\" Moving you to another chat app is another red flag."
+ },
+ {
+  "id": "en-08",
+  "channel": "sms",
+  "sender": "+1 (415) 555-0163",
+  "body": "Hi, is this David? It's Ava from the yoga studio, are we still on for dinner Friday? 😊",
+  "answer": "scam",
+  "explanation": "A friendly \"wrong number\" text is often the first step of a long investment or romance scam. Don't reply; just delete it.",
+  "situation": "You don't know anyone named Ava, and your name isn't David."
+ },
+ {
+  "id": "en-09",
+  "channel": "marketplace",
+  "sender": "Buyer: Mike R.",
+  "listing": "Oak dining table – $350",
+  "body": "I'll take it! I can't meet so I'll send a courier. Please scan this QR code to verify your account so you can receive my payment.",
+  "answer": "scam",
+  "explanation": "Real buyers never need you to scan a code or \"verify\" an account to pay you. The QR code leads to a fake payment page."
+ },
+ {
+  "id": "en-10",
+  "channel": "marketplace",
+  "sender": "Buyer: Jordan K.",
+  "listing": "Road bike – $350",
+  "body": "So sorry, I accidentally sent you $850 instead of $350! Can you refund the extra $500 with gift cards or Zelle? I'll send the courier for the bike after.",
+  "answer": "scam",
+  "explanation": "This is the overpayment trick. The first payment is fake or gets reversed, and you're out the \"refund\" you sent."
+ },
+ {
+  "id": "en-11",
+  "channel": "sms",
+  "sender": "+1 (702) 555-0181",
+  "body": "Congrats! You've been selected to receive a $1,000 gift card from a major retailer. Claim before midnight: bit-claim-reward.co/gift",
+  "answer": "scam",
+  "explanation": "You can't win a prize you never entered. The link collects your personal and card information."
+ },
+ {
+  "id": "en-12",
+  "channel": "email",
+  "sender": "Tax Refund Office <notice@refund-taxportal-gov.com>",
+  "subject": "You are eligible for a tax refund of $1,384.17",
+  "body": "After the last annual calculation, you are eligible to receive a refund. Submit your bank details within 48 hours to receive your payment.",
+  "cta": "Claim Refund",
+  "answer": "scam",
+  "explanation": "Tax agencies don't email you asking for bank details. A \".com\" address with \"gov\" stuffed in the name is fake."
+ },
+ {
+  "id": "en-13",
+  "channel": "call",
+  "sender": "(202) 555-0111",
+  "body": "\"This is Officer Brown from the federal benefits office. Your benefits number has been suspended due to suspicious activity. Press 1 now to speak with an agent or a warrant will be issued.\"",
+  "answer": "scam",
+  "explanation": "Government agencies don't suspend your number or threaten arrest by robocall. Hang up and don't press anything."
+ },
+ {
+  "id": "en-14",
+  "channel": "sms",
+  "sender": "+1 (213) 555-0174",
+  "body": "STATE DMV NOTICE: Your driver's license will be suspended on 10/30 due to unpaid traffic violations. Pay now to avoid suspension: dmv-state-pay.xyz",
+  "answer": "scam",
+  "explanation": "DMVs don't suspend licenses by text with a payment link. The \".xyz\" web address is a clear fake."
+ },
+ {
+  "id": "en-15",
+  "channel": "email",
+  "sender": "StreamFlix Support <billing@streamflix-supp0rt.com>",
+  "subject": "Your account is on hold",
+  "body": "We couldn't process your last payment. Update your payment details within 24 hours to keep watching.",
+  "cta": "Update Payment",
+  "answer": "scam",
+  "explanation": "Look closely: \"supp0rt\" uses a zero. Look-alike addresses plus a payment link mean phishing. Open the app yourself instead."
+ },
+ {
+  "id": "en-16",
+  "channel": "sms",
+  "sender": "+1 (646) 555-0137",
+  "body": "Hi, sorry to bother you! I accidentally sent my verification code to your number. Could you text it back to me? It's really urgent 🙏",
+  "answer": "scam",
+  "explanation": "That code was sent to YOU because someone is trying to take over your account. Never share a code with anyone."
+ },
+ {
+  "id": "en-17",
+  "channel": "dm",
+  "sender": "@daniel.offshore.eng",
+  "body": "My love, I'm stuck on the oil rig and my bank card is blocked. I just need $2,000 for the customs fee so I can finally come home to you. I'll pay you back the day I land ❤️",
+  "answer": "scam",
+  "explanation": "An online love interest you've never met in person who needs money for an \"emergency\" is a romance scam."
+ },
+ {
+  "id": "en-18",
+  "channel": "email",
+  "sender": "PayFlow <receipt@payflow-alerts.info>",
+  "subject": "Payment sent: $799.99 to CryptoHub",
+  "body": "You sent $799.99 USD to CryptoHub LLC.\n\nIf you did not make this payment, call PayFlow Support at +1 (877) 555-0156 immediately.",
+  "answer": "scam",
+  "explanation": "Fake receipts make you panic and call the scammer's number. Check your payment app directly instead."
+ },
+ {
+  "id": "en-19",
+  "channel": "sms",
+  "sender": "+1 (929) 555-0102",
+  "body": "Cloud Storage: Your storage is full. Your photos and videos will be deleted on 10/31. Upgrade now with 90% off: cloudsave-offer.shop",
+  "answer": "scam",
+  "explanation": "Your phone's real storage warnings appear in Settings, not in texts with \".shop\" links and deadlines."
+ },
+ {
+  "id": "en-20",
+  "channel": "web",
+  "sender": "WARNING! Your computer is infected",
+  "url": "http://pc-security-alert.live",
+  "body": "5 viruses detected. Your personal data and bank accounts are at risk. Do not close this window. Call Certified Tech Support now: 1-888-555-0177",
+  "cta": "Call Support Now",
+  "answer": "scam",
+  "explanation": "Web pages can't scan your device. Pop-ups with a phone number are tech-support scams. Just close the tab."
+ },
+ {
+  "id": "en-21",
+  "channel": "sms",
+  "sender": "+1 (480) 555-0120",
+  "body": "City Power & Light: Your power will be disconnected in 30 minutes due to an overdue bill. Call 1-800-555-0102 now to pay with a prepaid card.",
+  "answer": "scam",
+  "explanation": "Utilities send written notices and never demand prepaid cards. The 30-minute deadline is there to rush you."
+ },
+ {
+  "id": "en-22",
+  "channel": "email",
+  "sender": "Hiring Team <careers@remote-dataentry-jobs.org>",
+  "subject": "Congratulations! You're hired",
+  "body": "You have been selected for a remote Data Entry position ($45/hr). We will mail you a check to purchase equipment from our approved vendor. Please deposit it and send the vendor payment today.",
+  "answer": "scam",
+  "explanation": "Being hired without an interview, then asked to deposit a check and pay a \"vendor,\" is a fake-check scam. The check will bounce."
+ },
+ {
+  "id": "en-23",
+  "channel": "dm",
+  "sender": "@wealth.with.jenna",
+  "body": "I made $12,000 last month with this AI trading bot 🚀 My mentor only takes 5 new students. DM me \"PROFIT\" to join the VIP group!",
+  "answer": "scam",
+  "explanation": "Promises of guaranteed profits and a secret \"VIP group\" are investment scam bait."
+ },
+ {
+  "id": "en-24",
+  "channel": "sms",
+  "sender": "+1 (855) 555-0190",
+  "body": "FINAL NOTICE: You qualify for full student loan forgiveness under the new program. Approval closes TODAY. Call 855-555-0190 to lock it in.",
+  "answer": "scam",
+  "explanation": "Real loan programs never cost money to apply and don't close \"today.\" Check only through your official loan servicer."
+ },
+ {
+  "id": "en-25",
+  "channel": "marketplace",
+  "sender": "Landlord: Peter W.",
+  "listing": "2BR apartment – $1,200/mo",
+  "body": "Yes, it's still available! I'm working overseas, so I can't show it. Wire the $1,200 deposit and I'll mail you the keys.",
+  "answer": "scam",
+  "explanation": "A \"landlord\" who can't show the place and wants a wire is a rental scam. Never pay before you see the home in person."
+ },
+ {
+  "id": "en-26",
+  "channel": "sms",
+  "sender": "+63 917 555 0128",
+  "body": "Your international parcel is held at customs. A $2.99 release fee is required. Pay here: parcel-customs-release.com",
+  "answer": "scam",
+  "explanation": "The small fee is a trick to get your card number. Customs doesn't text you from a foreign number."
+ },
+ {
+  "id": "en-27",
+  "channel": "call",
+  "sender": "Your Bank",
+  "body": "\"This is your bank's fraud department. Your account has been compromised. To protect your money, we need you to move it to a new safe account today. If the teller asks why, tell them it's for a home repair.\"",
+  "answer": "scam",
+  "explanation": "Banks never ask you to move money to a \"safe account\" or lie to a teller. Caller ID can be faked. Hang up and call your bank."
+ },
+ {
+  "id": "en-28",
+  "channel": "dm",
+  "sender": "Karen (friend)",
+  "body": "OMG is this you in this video?? 😮 tinyurl-video.cc/xr8",
+  "answer": "scam",
+  "explanation": "Hacked friend accounts send shocking \"is this you?\" links to steal your login. Check with your friend another way."
+ },
+ {
+  "id": "en-29",
+  "channel": "email",
+  "sender": "IT Help Desk <it-desk@mail-security-update.com>",
+  "subject": "Password expires today",
+  "body": "Your email password will expire in 2 hours. To keep using your current password, confirm it below.",
+  "cta": "Keep Same Password",
+  "answer": "scam",
+  "explanation": "No real service asks you to \"confirm\" your password through an email link. This page steals it."
+ },
+ {
+  "id": "en-30",
+  "channel": "sms",
+  "sender": "+1 (786) 555-0149",
+  "body": "Help hurricane victims NOW! Every dollar counts. Buy gift cards and text the card numbers to this number. God bless.",
+  "answer": "scam",
+  "explanation": "Real charities never collect gift card codes by text. Give through a charity's official website."
+ },
+ {
+  "id": "en-31",
+  "channel": "call",
+  "sender": "(312) 555-0166",
+  "body": "\"This is Deputy Lewis with the county sheriff's office. You missed jury duty and there's a warrant for your arrest. You can settle the fine today with prepaid cards to avoid being taken in.\"",
+  "answer": "scam",
+  "explanation": "Courts don't call to collect fines with prepaid cards or threaten arrest by phone. Hang up and call the court's official number."
+ },
+ {
+  "id": "en-32",
+  "channel": "email",
+  "sender": "CoinVault Exchange <payouts@coinvault-withdraw.io>",
+  "subject": "0.5 BTC ready to withdraw",
+  "body": "Your trading account has earned 0.5 BTC. To release your withdrawal, a 10% unlock fee must be paid first.",
+  "answer": "scam",
+  "explanation": "Having to pay a fee to get your own \"profits\" out is the final stage of a crypto investment scam."
+ },
+ {
+  "id": "en-33",
+  "channel": "sms",
+  "sender": "+1 (702) 555-0133",
+  "body": "You're pre-approved for a $15,000 personal loan, no credit check! Pay a $150 processing fee to release your funds: quickloan-fast.biz",
+  "answer": "scam",
+  "explanation": "Legit lenders don't charge upfront fees to release a loan, and they do check credit."
+ },
+ {
+  "id": "en-34",
+  "channel": "dm",
+  "sender": "@sunnyhome.store.giveaway",
+  "body": "Congrats!! 🎉 You won our tablet giveaway! Just pay $4.95 shipping here within 1 hour to claim your prize: sunny-claim.shop",
+  "answer": "scam",
+  "explanation": "Copycat \"giveaway\" accounts ask for a small shipping fee to grab your card. Real giveaways don't charge winners."
+ },
+ {
+  "id": "en-35",
+  "channel": "email",
+  "sender": "Document Share <docs-share@secure-filebox.net>",
+  "subject": "Mark Thompson shared \"Invoice_Oct.pdf\" with you",
+  "body": "You have received a secure document. Sign in with your email address and password to view it.",
+  "cta": "View Document",
+  "answer": "scam",
+  "explanation": "An unexpected file that needs your email password to open is a login-stealing trap."
+ },
+ {
+  "id": "en-36",
+  "channel": "marketplace",
+  "sender": "Buyer: Sam T.",
+  "listing": "Gray sofa – $200",
+  "body": "Before I come see the couch I want to make sure you're real. I'm texting you a 6-digit code, just read it back to me.",
+  "answer": "scam",
+  "explanation": "They're using your number to set up an account in your name. Never read a code to anyone."
+ },
+ {
+  "id": "en-37",
+  "channel": "sms",
+  "sender": "+1 (347) 555-0158",
+  "body": "BANK ALERT: Unusual sign-in detected. Your online access has been locked. Verify your identity now: secure-bank-verify.co/login",
+  "answer": "scam",
+  "explanation": "Banks don't send login links like this. Open your bank's app or type its address yourself."
+ },
+ {
+  "id": "en-38",
+  "channel": "sms",
+  "sender": "72166",
+  "situation": "You're logging into your bank's app and just tapped \"Send code.\"",
+  "body": "Your Bank: Your verification code is 482913. We will never call you to ask for this code. Don't share it.",
+  "answer": "legit",
+  "explanation": "You asked for this code, it has no link, and it warns you not to share it. Just type it into the app yourself."
+ },
+ {
+  "id": "en-39",
+  "channel": "sms",
+  "sender": "Bright Smile Dental",
+  "situation": "You have a dentist appointment next Tuesday.",
+  "body": "Bright Smile Dental: Reminder of your appointment Tue 11/4 at 2:30 PM. Reply C to confirm or call our office to reschedule.",
+  "answer": "legit",
+  "explanation": "It matches an appointment you made and asks for nothing but a confirmation. That's a normal reminder."
+ },
+ {
+  "id": "en-40",
+  "channel": "sms",
+  "sender": "Main St Pharmacy",
+  "situation": "You dropped off a prescription yesterday.",
+  "body": "Your prescription is ready for pickup at Main St Pharmacy. Reply STOP to opt out.",
+  "answer": "legit",
+  "explanation": "It's expected, has no link and asks for no payment or personal details."
+ },
+ {
+  "id": "en-41",
+  "channel": "email",
+  "sender": "Northwind Home <orders@northwindhome.com>",
+  "situation": "You ordered a lamp online two days ago.",
+  "subject": "Your order #20491 has shipped",
+  "body": "Good news! Your order is on its way. You can track it anytime by signing in to your account on our website or app.",
+  "answer": "legit",
+  "explanation": "It matches your real order and doesn't pressure you. Still, tracking through the store's own app is the safest habit."
+ },
+ {
+  "id": "en-42",
+  "channel": "sms",
+  "sender": "Emily (daughter)",
+  "situation": "Your daughter flew to Denver today.",
+  "body": "Hey Mom, landed safe! Grabbing my bag now, I'll call you tonight ❤️",
+  "answer": "legit",
+  "explanation": "It's from her saved number, fits what's happening, and asks for nothing."
+ },
+ {
+  "id": "en-43",
+  "channel": "call",
+  "sender": "Dr. Patel's Office",
+  "situation": "You have a checkup with Dr. Patel tomorrow.",
+  "body": "\"Hi, this is Karen from Dr. Patel's office calling to confirm your appointment tomorrow at 10. If you need to reschedule, please call the office. Thanks!\"",
+  "answer": "legit",
+  "explanation": "A simple confirmation with no request for money or information is normal."
+ },
+ {
+  "id": "en-44",
+  "channel": "email",
+  "sender": "Northwind Home <no-reply@northwindhome.com>",
+  "situation": "You just tapped \"Forgot password\" on a shopping site.",
+  "subject": "Reset your password",
+  "body": "We received a request to reset your password. If this was you, use the button below. If not, you can ignore this email.",
+  "cta": "Reset Password",
+  "answer": "legit",
+  "explanation": "You started the reset just now, and the sender matches the store. Reset emails you didn't request are the ones to ignore."
+ },
+ {
+  "id": "en-45",
+  "channel": "sms",
+  "sender": "72166",
+  "situation": "You just bought groceries at Corner Grocery.",
+  "body": "Your Bank: Did you attempt a $62.18 purchase at Corner Grocery on 10/28? Reply YES or NO. We'll never ask for your PIN or passcode by text.",
+  "answer": "legit",
+  "explanation": "It matches your real purchase, has no link or phone number to call, and only asks YES or NO."
+ },
+ {
+  "id": "en-46",
+  "channel": "sms",
+  "sender": "Northwind Home",
+  "situation": "You're expecting a furniture delivery today.",
+  "body": "Your Northwind Home order will be delivered today between 2 and 4 PM.",
+  "answer": "legit",
+  "explanation": "Expected, no link, no fee, no request. Just information."
+ },
+ {
+  "id": "en-47",
+  "channel": "dm",
+  "sender": "Linda (church friend)",
+  "body": "Are we still on for coffee Saturday at 10? ☕ I'll save us a table by the window.",
+  "answer": "legit",
+  "explanation": "A friend making plans, asking for nothing. Not every message is a trap!"
+ },
+ {
+  "id": "en-48",
+  "channel": "email",
+  "sender": "City Library <news@citylibrary.org>",
+  "subject": "New this month at your library",
+  "body": "Free tech help sessions every Wednesday at 2 PM. No sign-up needed. Bring your phone or tablet and your questions!",
+  "answer": "legit",
+  "explanation": "Pure information with no link to click, no login and no payment."
+ },
+ {
+  "id": "en-49",
+  "channel": "sms",
+  "sender": "Lincoln Elementary",
+  "situation": "Your grandchild goes to Lincoln Elementary and a big storm is coming.",
+  "body": "Lincoln Elementary: School is closed tomorrow due to weather. Stay safe!",
+  "answer": "legit",
+  "explanation": "It fits the situation and asks for nothing. That's a normal school alert."
+ },
+ {
+  "id": "en-50",
+  "channel": "marketplace",
+  "sender": "Buyer: Anna L.",
+  "listing": "Kids' bike – $60",
+  "body": "Hi! Is the bike still available? I could come see it Saturday morning and pay cash.",
+  "answer": "legit",
+  "explanation": "Seeing the item in person and paying cash is how safe local deals work. Meet in a public place."
+ },
+ {
+  "id": "en-51",
+  "channel": "call",
+  "sender": "Main St Pharmacy",
+  "situation": "You dropped off a prescription this morning.",
+  "body": "\"This is an automated message from Main St Pharmacy. Your prescription is ready for pickup. No action is needed.\"",
+  "answer": "legit",
+  "explanation": "Expected and asks you to do nothing. No pressure, no payment."
+ },
+ {
+  "id": "en-52",
+  "channel": "email",
+  "sender": "Brewster Kitchen <orders@brewsterkitchen.com>",
+  "situation": "You just bought a coffee maker online.",
+  "subject": "Thanks for your order!",
+  "body": "Order total: $49.99. Estimated delivery: Friday. You can view your order anytime in your account.",
+  "answer": "legit",
+  "explanation": "It matches what you just bought and doesn't ask you to call, pay or log in through a link."
+ },
+ {
+  "id": "en-53",
+  "channel": "sms",
+  "sender": "Your Wireless",
+  "situation": "You've been streaming a lot of videos this month.",
+  "body": "Your Wireless: You've used 75% of your monthly data. No action needed. Usage resets on the 1st.",
+  "answer": "legit",
+  "explanation": "An informational alert with nothing to click and nothing to pay."
+ },
+ {
+  "id": "en-54",
+  "channel": "sms",
+  "sender": "Ride app",
+  "situation": "You just booked a ride in a ride-share app.",
+  "body": "Your driver Carlos is arriving in 2 min in a silver sedan, plate 7KDL203.",
+  "answer": "legit",
+  "explanation": "It matches the ride you just booked and asks for nothing."
+ },
+ {
+  "id": "en-55",
+  "channel": "email",
+  "sender": "HR Benefits <benefits@yourcompany.com>",
+  "situation": "Your company announced open enrollment last week.",
+  "subject": "Reminder: open enrollment ends Friday",
+  "body": "Open enrollment ends this Friday. To make changes, log in to the HR portal the way you usually do. Questions? Visit HR on the 3rd floor.",
+  "answer": "legit",
+  "explanation": "It points you to the portal you already use instead of a link, and matches what your company announced."
+ },
+ {
+  "id": "en-56",
+  "channel": "sms",
+  "sender": "Rosa's Kitchen",
+  "situation": "You put your name on a restaurant's waitlist.",
+  "body": "Your table at Rosa's Kitchen is ready! Please check in with the host within 10 minutes.",
+  "answer": "legit",
+  "explanation": "You asked to be texted and it asks for nothing but showing up."
+ },
+ {
+  "id": "en-57",
+  "channel": "sms",
+  "sender": "Happy Paws Vet",
+  "body": "Happy Paws Vet: Max is due for his annual checkup. Call us at the number on your pet's records to book.",
+  "answer": "legit",
+  "explanation": "A routine reminder that sends you to a number you already have. No link, no payment."
+ },
+ {
+  "id": "en-58",
+  "channel": "email",
+  "sender": "Your Bank <statements@yourbank.com>",
+  "subject": "Your October statement is ready",
+  "body": "Your monthly statement is ready. For your security, we never include links in our emails. Sign in to our app to view it.",
+  "answer": "legit",
+  "explanation": "No link, no pressure, and it tells you to use the app you already have. That's what real banks do."
+ },
+ {
+  "id": "en-59",
+  "channel": "call",
+  "sender": "Sam (grandson)",
+  "body": "\"Hi Grandpa, it's Sam! Just calling to say hi. Call me back on my cell when you can. Love you!\"",
+  "answer": "legit",
+  "explanation": "It's from Sam's saved number, there's no emergency and no money request."
+ },
+ {
+  "id": "en-60",
+  "channel": "sms",
+  "sender": "Oakwood Library",
+  "situation": "You put a book on hold last week.",
+  "body": "Your hold \"The Lighthouse Mystery\" is ready. Please pick it up by 11/5.",
+  "answer": "legit",
+  "explanation": "It matches something you did and needs nothing from you."
+ },
+ {
+  "id": "en-61",
+  "channel": "sms",
+  "sender": "Riverside Fitness",
+  "situation": "You signed up for a yoga class tonight.",
+  "body": "Reminder: Your yoga class starts at 6 PM tonight. See you there!",
+  "answer": "legit",
+  "explanation": "An expected reminder with nothing to tap or pay."
+ }
+]

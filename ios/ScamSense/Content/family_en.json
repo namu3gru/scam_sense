@@ -1,0 +1,87 @@
+{
+ "invite": "I installed ScamSense for you. If you ever get a text, email or call that feels off, paste it into ScamSense before you tap anything. It tells you in plain words if it's a scam and what to do. And you can always call me first. Search \"ScamSense\" in the App Store.",
+ "tips": [
+  {
+   "icon": "key.fill",
+   "title": "Pick a family safe word",
+   "body": "Choose a word only your family knows. If someone calls in an 'emergency,' ask for it. AI can copy a voice, but not your safe word."
+  },
+  {
+   "icon": "phone.arrow.up.right.fill",
+   "title": "Hang up and call back",
+   "body": "If a call or text claims to be your bank, a company or a relative, hang up and call them on a number you already have."
+  },
+  {
+   "icon": "lock.fill",
+   "title": "Codes are like keys",
+   "body": "Never read a one-time code to anyone, not even 'your bank.' Real companies never ask for it."
+  },
+  {
+   "icon": "giftcard.fill",
+   "title": "Gift cards are for gifts",
+   "body": "No real government office, company or grandchild will ever ask to be paid in gift cards, crypto or cash by courier."
+  },
+  {
+   "icon": "tortoise.fill",
+   "title": "Slow down",
+   "body": "Scammers rush you. A real emergency can wait 10 minutes while you call someone you trust."
+  },
+  {
+   "icon": "phone.down.fill",
+   "title": "Silence unknown callers",
+   "body": "On iPhone: Settings › Apps › Phone › Silence Unknown Callers. Calls from saved contacts still ring."
+  },
+  {
+   "icon": "person.badge.shield.checkmark.fill",
+   "title": "Add a trusted contact at the bank",
+   "body": "Many banks let you name a trusted person they can call if something looks wrong on the account."
+  },
+  {
+   "icon": "bubble.left.and.text.bubble.right.fill",
+   "title": "Make it OK to ask",
+   "body": "Tell your parent there's no such thing as a silly question. 'Check it in ScamSense or call me' should be the family rule."
+  }
+ ],
+ "templates": [
+  {
+   "icon": "car.fill",
+   "title": "Fake toll texts",
+   "message": "Heads up: texts saying you owe a toll and need to pay through a link are scams. Don't tap them. If you're worried, check your account on the official website."
+  },
+  {
+   "icon": "shippingbox.fill",
+   "title": "Package 'on hold' texts",
+   "message": "If you get a text that a package is on hold or needs a small fee, it's a scam. Track packages only in the store's app. Don't tap the link!"
+  },
+  {
+   "icon": "person.2.wave.2.fill",
+   "title": "'Grandkid in trouble' calls",
+   "message": "Scammers are using AI to copy family members' voices. If anyone calls saying they're in trouble and need money, hang up and call them back on their usual number. Ask for our safe word!"
+  },
+  {
+   "icon": "building.columns.fill",
+   "title": "Bank 'safe account' calls",
+   "message": "Your bank will NEVER ask you to move money to a 'safe account,' buy gift cards or read them a code. If someone does, hang up and call the number on the back of your card."
+  },
+  {
+   "icon": "desktopcomputer",
+   "title": "Computer virus pop-ups",
+   "message": "If your computer suddenly shows a loud warning with a phone number to call, it's a scam. Don't call. Just close the browser or restart the computer."
+  },
+  {
+   "icon": "building.2.fill",
+   "title": "Government & jury-duty threats",
+   "message": "Government offices and courts don't call to threaten arrest or demand gift cards. If you get a call like that, hang up. It's a scam."
+  },
+  {
+   "icon": "chart.line.uptrend.xyaxis",
+   "title": "'Wrong number' and crypto tips",
+   "message": "Be careful with friendly 'wrong number' texts. They often turn into crypto investment scams. Don't reply, and never invest through someone you met online."
+  },
+  {
+   "icon": "qrcode",
+   "title": "Marketplace QR codes",
+   "message": "Selling something online? Real buyers never need you to scan a QR code or read them a code to pay you. Meet in person and get paid there."
+  }
+ ]
+}

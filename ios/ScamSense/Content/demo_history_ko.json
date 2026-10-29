@@ -1,0 +1,10 @@
+[
+{"text":"[Web발신] 고객님 택배가 주소지 불명으로 보관중입니다. 주소 확인: http://kr-parcel.top/x8","channel":"sms","minutesAgo":18,
+ "result":{"verdict":"scam","risk_score":95,"scam_type":"택배 사칭 스미싱","headline":"사기 문자예요. 택배사는 개인 번호로 링크를 보내지 않아요.","red_flags":[{"flag":"수상한 링크","why":"공식 택배사 주소가 아니에요."}],"safe_signs":[],"what_to_do":["링크를 누르지 마세요."],"if_already_acted":["카드사에 연락해 카드를 정지하세요."],"report_to":[{"name":"한국인터넷진흥원","how":"118"}],"family_message":"택배 주소 확인 문자 링크는 사기예요!"}},
+{"text":"엄마 나 폰 액정 깨져서 수리 맡겼어. 이걸로 연락해. 급하게 결제할 게 있는데 카드 사진 좀 보내줄 수 있어?","channel":"social","minutesAgo":1500,
+ "result":{"verdict":"scam","risk_score":93,"scam_type":"가족 사칭 메신저 피싱","headline":"자녀를 사칭한 사기예요. 원래 번호로 꼭 전화해 보세요.","red_flags":[{"flag":"새 번호로 연락","why":"폰이 고장 났다며 다른 번호를 써요."},{"flag":"카드 사진 요구","why":"가족도 카드 사진을 달라고 하지 않아요."}],"safe_signs":[],"what_to_do":["답장하지 말고 자녀에게 직접 전화하세요."],"if_already_acted":["카드사에 바로 연락하세요."],"report_to":[{"name":"경찰청","how":"112"}],"family_message":"폰 고장 났다며 카드 사진 달라는 메시지는 사기예요."}},
+{"text":"[OO카드] 승인 김*수 12,500원 일시불 10/28 12:31 OO편의점","channel":"sms","minutesAgo":4300,
+ "result":{"verdict":"likely_safe","risk_score":10,"scam_type":"없음","headline":"평범한 카드 승인 문자로 보여요.","red_flags":[],"safe_signs":["링크나 전화 요구가 없어요.","방금 한 결제와 일치해요."],"what_to_do":["결제 내역이 맞는지 카드사 앱에서 확인하세요."],"if_already_acted":[],"report_to":[],"family_message":"링크 없는 카드 승인 문자는 보통 정상이에요."}},
+{"text":"[OO캐피탈] 정부지원 저금리 대환대출 승인 대상자입니다. 기존 대출 상환 후 진행 가능. 상담 070-0000-1123","channel":"sms","minutesAgo":9000,
+ "result":{"verdict":"suspicious","risk_score":72,"scam_type":"대출 사기 의심","headline":"주의하세요. 먼저 돈을 갚으라는 대출 권유는 사기일 가능성이 높아요.","red_flags":[{"flag":"기존 대출 상환 요구","why":"대출 사기의 전형적인 수법이에요."}],"safe_signs":[],"what_to_do":["문자 속 번호로 전화하지 마세요."],"if_already_acted":["돈을 보냈다면 112에 신고하세요."],"report_to":[{"name":"금융감독원","how":"1332"}],"family_message":"대출해 준다며 먼저 돈 내라는 문자는 사기예요."}}
+]

@@ -1,0 +1,22 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Home screen name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ScamSense" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "스캠센스" } }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ScamSense" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "스캠센스" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}
