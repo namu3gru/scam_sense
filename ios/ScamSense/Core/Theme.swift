@@ -64,7 +64,11 @@ struct PrimaryButtonStyle: ButtonStyle {
             .foregroundStyle(foreground)
             .frame(maxWidth: .infinity, minHeight: 58)
             .padding(.horizontal, 18)
-            .background(fill.opacity(isEnabled ? 1 : 0.35), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .background {
+                // Faded when disabled, but on an opaque base so content scrolling underneath doesn't show through.
+                let shape = RoundedRectangle(cornerRadius: 18, style: .continuous)
+                ZStack { shape.fill(Theme.bg); shape.fill(fill.opacity(isEnabled ? 1 : 0.35)) }
+            }
             .scaleEffect(configuration.isPressed ? 0.97 : 1)
             .animation(.spring(duration: 0.25), value: configuration.isPressed)
     }
