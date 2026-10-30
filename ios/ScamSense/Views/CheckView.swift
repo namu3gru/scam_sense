@@ -61,6 +61,9 @@ struct CheckView: View {
                             .font(.system(.headline, design: .rounded, weight: .heavy))
                             .foregroundStyle(Theme.ink)
                     }
+                    // Room inside the iOS 26 glass capsule the toolbar draws around this item.
+                    .padding(.leading, 4)
+                    .padding(.trailing, 12)
                     .fixedSize()
                     .accessibilityElement(children: .combine)
                 }

@@ -58,6 +58,7 @@ struct PrimaryButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .labelStyle(ButtonIconLabelStyle())
             .font(.system(.title3, design: .rounded, weight: .bold))
             .multilineTextAlignment(.center)
             .foregroundStyle(foreground)
@@ -74,6 +75,7 @@ struct SecondaryButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .labelStyle(ButtonIconLabelStyle())
             .font(.system(.headline, design: .rounded, weight: .semibold))
             .multilineTextAlignment(.center)
             .foregroundStyle(tint)
@@ -83,6 +85,18 @@ struct SecondaryButtonStyle: ButtonStyle {
             .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(tint.opacity(0.45), lineWidth: 1.5))
             .scaleEffect(configuration.isPressed ? 0.97 : 1)
             .animation(.spring(duration: 0.25), value: configuration.isPressed)
+    }
+}
+
+/// Icon + title for the big buttons: the icon is a little larger and centered vertically on the title
+/// (the default label pins it to the first text line, which looks off when the title wraps or the symbol is tall).
+struct ButtonIconLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment: .center, spacing: 8) {
+            configuration.icon
+                .imageScale(.large)
+            configuration.title
+        }
     }
 }
 
