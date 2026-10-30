@@ -18,8 +18,8 @@ PRICES = {  # product -> {territory: customer price}; CAN and the rest follow US
     "com.namu3gru.ScamSense.pro.yearly": {"USA": "29.99", "KOR": "44000"},
     "com.namu3gru.ScamSense.pro.monthly": {"USA": "4.99", "KOR": "6900"},
 }
-FEATURES = {"en-US": "Unlimited checks, full history, family warnings",   # <= 55 characters
-            "ko": "무제한 확인, 전체 기록, 가족 경고 메시지"}
+FEATURES = {"en-US": "5 checks a day, full history, family warnings",   # <= 55 characters
+            "ko": "하루 5회 확인, 전체 기록, 가족 경고 메시지"}
 SUBS = [  # productId, reference name, period, level, en name, ko name
     ("com.namu3gru.ScamSense.pro.yearly", "ScamSense Pro Yearly", "ONE_YEAR", 1, "ScamSense Pro Yearly", "스캠센스 Pro 연간"),
     ("com.namu3gru.ScamSense.pro.monthly", "ScamSense Pro Monthly", "ONE_MONTH", 2, "ScamSense Pro Monthly", "스캠센스 Pro 월간"),

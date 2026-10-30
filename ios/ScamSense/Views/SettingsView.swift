@@ -182,7 +182,7 @@ struct SettingsView: View {
                         Text("Renews or ends \(Date(timeIntervalSince1970: until), format: .dateTime.month().day().year())")
                             .font(.subheadline).foregroundStyle(Theme.subtle)
                     } else {
-                        Text("Unlimited checks (fair use 50/day)").font(.subheadline).foregroundStyle(Theme.subtle)
+                        Text("5 checks a day").font(.subheadline).foregroundStyle(Theme.subtle)
                     }
                 } else if let q = app.quota {
                     Text("\(q.remaining) of \(q.limit) free checks left this week")

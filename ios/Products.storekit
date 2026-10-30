@@ -26,8 +26,8 @@
     {
       "id" : "21811201",
       "localizations" : [
-        { "description" : "Unlimited scam checks and family protection", "displayName" : "ScamSense Pro", "locale" : "en_US" },
-        { "description" : "무제한 사기 확인과 가족 보호", "displayName" : "스캠센스 Pro", "locale" : "ko" }
+        { "description" : "5 scam checks a day and family protection", "displayName" : "ScamSense Pro", "locale" : "en_US" },
+        { "description" : "하루 5회 사기 확인과 가족 보호", "displayName" : "스캠센스 Pro", "locale" : "ko" }
       ],
       "name" : "ScamSense Pro",
       "subscriptions" : [
@@ -48,8 +48,8 @@
             "subscriptionPeriod" : "P1W"
           },
           "localizations" : [
-            { "description" : "Unlimited checks, full history, family warnings", "displayName" : "ScamSense Pro Yearly", "locale" : "en_US" },
-            { "description" : "무제한 확인, 전체 기록, 가족 경고 메시지", "displayName" : "스캠센스 Pro 연간", "locale" : "ko" }
+            { "description" : "5 checks a day, full history, family warnings", "displayName" : "ScamSense Pro Yearly", "locale" : "en_US" },
+            { "description" : "하루 5회 확인, 전체 기록, 가족 경고 메시지", "displayName" : "스캠센스 Pro 연간", "locale" : "ko" }
           ],
           "productID" : "com.namu3gru.ScamSense.pro.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
@@ -72,8 +72,8 @@
           "groupNumber" : 2,
           "internalID" : "6740112001",
           "localizations" : [
-            { "description" : "Unlimited checks, full history, family warnings", "displayName" : "ScamSense Pro Monthly", "locale" : "en_US" },
-            { "description" : "무제한 확인, 전체 기록, 가족 경고 메시지", "displayName" : "스캠센스 Pro 월간", "locale" : "ko" }
+            { "description" : "5 checks a day, full history, family warnings", "displayName" : "ScamSense Pro Monthly", "locale" : "en_US" },
+            { "description" : "하루 5회 확인, 전체 기록, 가족 경고 메시지", "displayName" : "스캠센스 Pro 월간", "locale" : "ko" }
           ],
           "productID" : "com.namu3gru.ScamSense.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",

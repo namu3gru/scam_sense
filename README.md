@@ -41,7 +41,7 @@
 
 **무료 vs Pro**
 - 무료: AI 확인 **주 3회 (서버에서 강제)**, 퀴즈·배우기 무제한, 기록 최근 10개, 가족 경고 템플릿 2개
-- Pro: 무제한 확인(공정 사용 하루 50회, 서버 강제), 전체 기록, 가족 경고 템플릿 8개 전부
+- Pro: 하루 5회 확인(서버 강제), 전체 기록, 가족 경고 템플릿 8개 전부
 
 **전환 장치**
 - 온보딩에서 내장 샘플로 "아하" 결과를 먼저 보여 준 뒤 소프트 페이월(닫기 가능)
@@ -209,7 +209,7 @@ PROTECT A PARENT
 Family safety habits (like a family safe word) and an invite message to help your parents get set up.
 
 FREE: 3 checks every week, unlimited quiz and learning.
-SCAMSENSE PRO: unlimited checks (fair use 50/day), full history and ready-to-send family warnings. Monthly or yearly with a 7-day free trial.
+SCAMSENSE PRO: 5 checks a day, full history and ready-to-send family warnings. Monthly or yearly with a 7-day free trial.
 
 Payment is charged to your Apple Account at confirmation of purchase (after the free trial, if any). Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel anytime in your App Store account settings.
 
@@ -253,7 +253,7 @@ Terms: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 가족 확인 암호 같은 안전 습관과 부모님께 보내는 추천 메시지.
 
 무료: 매주 3회 확인, 퀴즈·학습 무제한
-스캠센스 Pro: 무제한 확인(공정 사용 하루 50회), 전체 기록, 가족 경고 메시지. 월간 또는 연간(7일 무료 체험).
+스캠센스 Pro: 하루 5회 확인, 전체 기록, 가족 경고 메시지. 월간 또는 연간(7일 무료 체험).
 
 결제는 구매 확정 시(무료 체험 후) Apple 계정으로 청구되며, 현재 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신됩니다. App Store 계정 설정에서 언제든 관리·해지할 수 있어요.
 

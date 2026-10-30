@@ -273,7 +273,7 @@ struct CheckView: View {
                 Text("Protect your whole family")
                     .font(.system(.headline, design: .rounded))
                     .foregroundStyle(.white)
-                Text("Unlimited checks, full history and ready-made family warnings with Pro.")
+                Text("5 checks a day, full history and ready-made family warnings with Pro.")
                     .font(.subheadline)
                     .foregroundStyle(.white.opacity(0.85))
                 Button("See Pro") { showPaywall = true }
@@ -445,7 +445,7 @@ struct CheckView: View {
     }
 }
 
-/// "2 of 3 free checks left this week" / "Pro · unlimited".
+/// "2 of 3 free checks left this week" / "Pro · 5 checks a day".
 struct QuotaPill: View {
     @Environment(AppModel.self) private var app
 
@@ -453,7 +453,7 @@ struct QuotaPill: View {
         HStack(spacing: 8) {
             if app.isPro {
                 Image(systemName: "crown.fill").foregroundStyle(Theme.gold)
-                Text("Pro · Unlimited checks")
+                Text("Pro · 5 checks a day")
             } else if let q = app.quota {
                 Image(systemName: q.remaining > 0 ? "checkmark.circle.fill" : "hourglass")
                     .foregroundStyle(q.remaining > 0 ? Theme.safe : Theme.warn)

@@ -90,7 +90,7 @@ struct PaywallView: View {
 
     private var features: some View {
         VStack(alignment: .leading, spacing: 11) {
-            feature("infinity", "Unlimited checks (fair use 50/day)")
+            feature("checkmark.shield", "5 checks a day")
             feature("clock.arrow.circlepath", "Your full check history")
             feature("heart.text.square.fill", "Ready-made family warnings")
         }

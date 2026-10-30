@@ -1,5 +1,8 @@
 # Korean translations for Localizable.xcstrings. Run design/make_strings.py to regenerate the catalog.
 KO = {
+"5 checks a day": "하루 5회 확인",
+"Pro · 5 checks a day": "Pro · 하루 5회 확인",
+"5 checks a day, full history and ready-made family warnings with Pro.": "Pro로 하루 5회 확인, 전체 기록, 가족 경고 메시지를 이용하세요.",
 "Back to history": "기록으로 돌아가기",
 "We couldn't confirm your Pro subscription with our server yet. Open Settings and tap Restore Purchases, then try again.": "아직 서버에서 Pro 구독을 확인하지 못했어요. 설정에서 '구매 복원'을 누른 뒤 다시 시도해 주세요.",
 "Unlimited checks (fair use 50/day)": "무제한 확인 (공정 사용 하루 50회)",

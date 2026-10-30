@@ -3152,6 +3152,36 @@
           }
         }
       }
+    },
+    "5 checks a day, full history and ready-made family warnings with Pro.": {
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro로 하루 5회 확인, 전체 기록, 가족 경고 메시지를 이용하세요."
+          }
+        }
+      }
+    },
+    "Pro · 5 checks a day": {
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro · 하루 5회 확인"
+          }
+        }
+      }
+    },
+    "5 checks a day": {
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "하루 5회 확인"
+          }
+        }
+      }
     }
   },
   "version": "1.0"
