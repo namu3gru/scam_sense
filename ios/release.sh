@@ -5,23 +5,16 @@
 #   ~/.appstoreconnect/private_keys/AuthKey_$ASC_KEY_ID.p8   App Store Connect API key
 #   ~/Library/Keychains/sayvroom-signing.keychain-db          Apple Distribution identity
 #   ~/.appstoreconnect/signing/keychain.pw                    that keychain's password
+#   ~/.appstoreconnect/apps_api_token                         apps_api APP_TOKEN (64 hex, chmod 600)
 #   "ScamSense App Store" provisioning profile installed
 set -euo pipefail
 cd "$(dirname "$0")"
-# The app can't talk to the backend without the real token (README section 5).
-# Escape hatches, both explicit:
-#   ALLOW_PLACEHOLDER_TOKEN=1 LOCAL=1   signed local export only (no upload)
-#   TESTFLIGHT_PLACEHOLDER=1            upload for TestFlight while the server isn't live (AI checks fail);
-#                                       never submit such a build for review
-if grep -q 'REPLACE_WITH_APP_TOKEN' ScamSense/Core/AppConfig.swift; then
-  if [[ -n "${TESTFLIGHT_PLACEHOLDER:-}" ]]; then
-    echo "warning: uploading with the placeholder token for TestFlight only. AI checks won't work in this build." >&2
-  elif [[ -n "${ALLOW_PLACEHOLDER_TOKEN:-}" && -n "${LOCAL:-}" ]]; then
-    echo "warning: placeholder token, local export only." >&2
-  else
-    echo "error: ScamSense/Core/AppConfig.swift still has REPLACE_WITH_APP_TOKEN. Paste the real APP_TOKEN first." >&2
-    exit 1
-  fi
+# The backend token is never committed: it comes from this file and is passed as the APP_TOKEN build setting
+# (Info.plist "AppToken"). Refuse to build without it.
+TOKEN_FILE=~/.appstoreconnect/apps_api_token
+if [[ ! -s $TOKEN_FILE ]] || ! tr -d '\n' < $TOKEN_FILE | grep -Eq '^[0-9a-f]{64}$'; then
+  echo "error: $TOKEN_FILE is missing, empty or not a 64-hex token." >&2
+  exit 1
 fi
 ASC_KEY_ID=NNSGPWHMLB
 ASC_ISSUER=bb989c3b-f475-4517-80f3-ce12ae4e0c86
@@ -34,7 +27,7 @@ security unlock-keychain -p "$(cat ~/.appstoreconnect/signing/keychain.pw)" ~/Li
 rm -rf "$OUT" && mkdir -p "$OUT"
 xcodebuild -project ScamSense.xcodeproj -scheme ScamSense -configuration Release \
   -destination 'generic/platform=iOS' -archivePath "$OUT/ScamSense.xcarchive" archive \
-  CURRENT_PROJECT_VERSION=$BUILD \
+  CURRENT_PROJECT_VERSION=$BUILD APP_TOKEN="$(tr -d '\n' < $TOKEN_FILE)" \
   CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="Apple Distribution" DEVELOPMENT_TEAM=3W7W37MU3Z \
   PROVISIONING_PROFILE_SPECIFIER="ScamSense App Store" \
   OTHER_CODE_SIGN_FLAGS="--keychain $HOME/Library/Keychains/sayvroom-signing.keychain-db" | tail -1
@@ -43,6 +36,10 @@ if [[ -n "${LOCAL:-}" ]]; then
   OPTS="$OUT/ExportOptions-local.plist"; cp ExportOptions.plist "$OPTS"
   /usr/libexec/PlistBuddy -c "Set :destination export" "$OPTS"
 fi
+# The archived app must carry a real token (checked by shape only, never printed).
+plutil -extract AppToken raw "$OUT/ScamSense.xcarchive/Products/Applications/ScamSense.app/Info.plist" | grep -Eq '^[0-9a-f]{64}$' \
+  || { echo "error: archived Info.plist has no valid AppToken." >&2; exit 1; }
+echo "archive: AppToken present (64 hex)"
 xcodebuild -exportArchive -archivePath "$OUT/ScamSense.xcarchive" -exportOptionsPlist "$OPTS" \
   -exportPath "$OUT/export" "${AUTH[@]}" | tail -1
 if [[ -n "${LOCAL:-}" ]]; then echo "Exported $OUT/export (build $BUILD)"; else echo "Uploaded build $BUILD"; fi

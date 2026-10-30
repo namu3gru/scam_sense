@@ -162,7 +162,10 @@ for loc, folder in (("en-US", "en"), ("ko", "ko")):
 paywall = os.path.join(ROOT, "screenshots/appstore/raw/en_paywall.png")  # tools/shot69.sh en paywall -uiScreen paywall
 group = next(g for g in api("GET", f"/v1/apps/{APP}/subscriptionGroups")["data"] if g["attributes"]["referenceName"] == GROUP)
 for sub in api("GET", f"/v1/subscriptionGroups/{group['id']}/subscriptions")["data"]:
-    if not api("GET", f"/v1/subscriptions/{sub['id']}/appStoreReviewScreenshot").get("data"):
+    old = api("GET", f"/v1/subscriptions/{sub['id']}/appStoreReviewScreenshot").get("data")
+    if old:  # replaced on each run, so a new paywall capture takes effect
+        api("DELETE", f"/v1/subscriptionAppStoreReviewScreenshots/{old['id']}")
+    if True:
         upload_asset("/v1/subscriptionAppStoreReviewScreenshots", "subscription", "subscriptions", sub["id"],
                      "subscriptionAppStoreReviewScreenshots", paywall)
 print("product review screenshots: ok")

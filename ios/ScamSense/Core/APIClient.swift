@@ -54,8 +54,10 @@ struct APIClient {
         try await send(request("status"))
     }
 
-    func redeem(signedTransaction: String) async throws -> QuotaStatus {
-        let body = try JSONEncoder().encode(["signed_transaction": signedTransaction])
+    func redeem(signedTransaction: String, signedRenewalInfo: String? = nil) async throws -> QuotaStatus {
+        var fields = ["signed_transaction": signedTransaction]
+        if let signedRenewalInfo { fields["signed_renewal_info"] = signedRenewalInfo }  // billing grace period
+        let body = try JSONEncoder().encode(fields)
         return try await send(request("entitlement", method: "POST", body: body))
     }
 

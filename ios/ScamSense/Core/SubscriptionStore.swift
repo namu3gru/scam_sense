@@ -15,8 +15,9 @@ final class SubscriptionStore {
     var purchasing = false
     var lastError: String?
 
-    /// Called with each transaction's jwsRepresentation (AppModel posts it to the server).
-    var onSignedTransaction: ((String) async -> Void)?
+    /// Called with each transaction's jwsRepresentation and, when the subscription has a status, its signed
+    /// renewal info (AppModel posts both to the server; the renewal info proves a billing grace period).
+    var onSignedTransaction: ((String, String?) async -> Void)?
 
     private var updatesTask: Task<Void, Never>?
 
@@ -61,23 +62,36 @@ final class SubscriptionStore {
             if tx.revocationDate == nil, (tx.expirationDate ?? .distantFuture) > Date() {
                 active.insert(tx.productID)
             }
-            await onSignedTransaction?(result.jwsRepresentation)
+            await onSignedTransaction?(result.jwsRepresentation, await renewalInfoJWS(for: tx.originalID))
         }
         activeProductIDs = active.union(await gracePeriodProductIDs())
     }
 
-    /// Billing grace period: a renewal payment failed and Apple is retrying. The last transaction has
-    /// already expired, but the subscription status is .inGracePeriod, so the subscriber keeps Pro.
-    private func gracePeriodProductIDs() async -> Set<String> {
-        var ids: Set<String> = []
+    private func subscriptionStatuses() async -> [Product.SubscriptionInfo.Status] {
         let product: Product?
         if let loaded = yearly ?? monthly {
             product = loaded
         } else {
             product = try? await Product.products(for: AppConfig.productIDs).first
         }
-        guard let statuses = try? await product?.subscription?.status else { return ids }
-        for status in statuses where status.state == .inGracePeriod {
+        return (try? await product?.subscription?.status) ?? []
+    }
+
+    /// The signed renewal info of the subscription this transaction belongs to, if StoreKit has one.
+    private func renewalInfoJWS(for originalID: UInt64) async -> String? {
+        for status in await subscriptionStatuses() {
+            if case .verified(let tx) = status.transaction, tx.originalID == originalID {
+                return status.renewalInfo.jwsRepresentation
+            }
+        }
+        return nil
+    }
+
+    /// Billing grace period: a renewal payment failed and Apple is retrying. The last transaction has
+    /// already expired, but the subscription status is .inGracePeriod, so the subscriber keeps Pro.
+    private func gracePeriodProductIDs() async -> Set<String> {
+        var ids: Set<String> = []
+        for status in await subscriptionStatuses() where status.state == .inGracePeriod {
             guard case .verified(let tx) = status.transaction, tx.revocationDate == nil,
                   AppConfig.productIDs.contains(tx.productID) else { continue }
             ids.insert(tx.productID)
@@ -98,7 +112,7 @@ final class SubscriptionStore {
                     lastError = String(localized: "The purchase couldn't be verified.")
                     return false
                 }
-                await onSignedTransaction?(verification.jwsRepresentation)
+                await onSignedTransaction?(verification.jwsRepresentation, await renewalInfoJWS(for: tx.originalID))
                 await tx.finish()
                 activeProductIDs.insert(tx.productID)
                 return true
@@ -130,7 +144,7 @@ final class SubscriptionStore {
 
     private func handle(_ update: VerificationResult<Transaction>) async {
         guard case .verified(let tx) = update else { return }
-        await onSignedTransaction?(update.jwsRepresentation)
+        await onSignedTransaction?(update.jwsRepresentation, await renewalInfoJWS(for: tx.originalID))
         await tx.finish()
         if tx.revocationDate == nil, (tx.expirationDate ?? .distantFuture) > Date() {
             activeProductIDs.insert(tx.productID)

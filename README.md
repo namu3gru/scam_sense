@@ -121,12 +121,13 @@ apps_api/site/scam/                privacy.html, terms.html, support.html (en + 
 
 ## 5. 실행 & 테스트 방법 (Xcode 처음이어도 OK)
 
-### ★ 출시 전 꼭 할 일: 앱 토큰 넣기
-`ios/ScamSense/Core/AppConfig.swift` 파일을 열고
-```swift
-static let appToken = "REPLACE_WITH_APP_TOKEN"
-```
-의 따옴표 안을 서버 `apps_api/.env`의 `APP_TOKEN` 값으로 바꿉니다. (App Store ID가 생기면 같은 파일의 `appStoreID`에 숫자를 넣으면 가족 초대 메시지에 링크가 붙습니다.)
+### 앱 토큰 (커밋하지 않음)
+서버 토큰은 코드에 넣지 않습니다. 이 Mac의 `~/.appstoreconnect/apps_api_token`(권한 600)에만 있고,
+`ios/release.sh`가 빌드할 때 빌드 설정 `APP_TOKEN`으로 넘겨 Info.plist의 `AppToken`에 들어갑니다
+(프로젝트 기본값은 `REPLACE_WITH_APP_TOKEN`). 파일이 없거나 64자리 16진수가 아니면 release.sh가 멈추고,
+보관(archive)된 앱에 토큰이 제대로 들어갔는지도 모양만 검사합니다(값은 출력 안 함).
+시뮬레이터에서 실제 서버로 시험할 때: `xcodebuild ... build APP_TOKEN="$(tr -d '\n' < ~/.appstoreconnect/apps_api_token)"`.
+프로젝트를 공용 생성기로 다시 만들 때는 `--key APP_TOKEN=REPLACE_WITH_APP_TOKEN`을 꼭 넣으세요.
 
 ### Xcode에서 실행
 1. Finder에서 `scam_sense/ios/ScamSense.xcodeproj` 더블클릭
@@ -280,15 +281,15 @@ ScamSense gives an AI second opinion on whether a pasted message, link, phone nu
 ---
 
 ## 9. 출시 전 체크리스트
-- [x] (2026-10-29) 번들 ID `com.namu3gru.ScamSense` 등록 + 배포 프로필 "ScamSense App Store" 생성·설치(API). 서명 빌드: `ios/release.sh` (`LOCAL=1`이면 업로드 없이 .ipa만). `AppConfig.swift`에 `REPLACE_WITH_APP_TOKEN`이 남아 있으면 release.sh가 멈춥니다(로컬 서명 테스트만 `ALLOW_PLACEHOLDER_TOKEN=1 LOCAL=1`).
+- [x] (2026-10-29) 번들 ID `com.namu3gru.ScamSense` 등록 + 배포 프로필 "ScamSense App Store" 생성·설치(API). 서명 빌드: `ios/release.sh` (`LOCAL=1`이면 업로드 없이 .ipa만). 토큰 파일(`~/.appstoreconnect/apps_api_token`)이 없으면 release.sh가 멈춥니다.
 - [x] 6.9" 스크린샷 세트(1320×2868, 캡션 포함) en 7장 `screenshots/appstore/en/`, ko 7장 `screenshots/appstore/ko/`. 원본 캡처: `U=<시뮬레이터 UDID> tools/shot69.sh`, 캡션 합성: `swift tools/frame_shots.swift` (예시 데이터만 사용, 서버 호출 없음).
 - [x] (2026-10-29) App Store Connect 앱 레코드(Apple ID 6828638422, SKU `scamsense`). `AppConfig.appStoreID` 입력.
 - [x] (API) 구독 그룹 "ScamSense Pro" + 연간($29.99/₩44,000, 1주 무료 체험)·월간($4.99/₩6,900), 미국·한국·캐나다 판매, 나머지 국가도 Apple 환산 가격 등록: `ASC=<asc> tools/asc_setup.py` (가격 변경: `tools/asc_prices.py`)
 - [x] (API) 스토어 문구·스크린샷·카테고리(유틸리티/라이프스타일)·연령 4+·저작권·심사 연락처/메모·무료·판매 국가·빌드 연결·구독 심사용 스크린샷: `tools/asc_metadata.py`
-- [x] (API) TestFlight 내부 그룹 "Internal"(모든 빌드) + 테스트 안내 문구: `tools/asc_testflight.py`. 첫 빌드는 서버가 없어 임시 토큰으로 업로드(`TESTFLIGHT_PLACEHOLDER=1 ios/release.sh`) — **이 빌드는 심사 제출 금지**.
+- [x] (API) TestFlight 내부 그룹 "Internal"(모든 빌드) + 테스트 안내 문구: `tools/asc_testflight.py`. 첫 빌드(202610291937)는 임시 토큰 빌드 — **심사 제출 금지**, 이후 빌드는 실제 토큰 포함.
 - [ ] (웹) "Internal" 그룹에 본인 추가, App Privacy 답변, 결제 유예 기간 16일 켜기
-- [ ] 서버(apps_api) 배포 + 실제 `APP_TOKEN`, 결제 유예 기간(grace period) 중인 구독자도 Pro로 인정하도록 서버 보완 필요(아래 11번).
-- [ ] `AppConfig.swift`의 `appToken`을 실제 값으로 교체 (위 5번)
+- [x] (2026-10-29) 서버(apps_api) 배포, 실제 토큰은 release.sh가 주입(위 5번). 결제 유예 기간: 앱이 `signed_renewal_info`도 보내고 서버가 유예 종료일까지 Pro 인정.
+- [ ] 서버에 Anthropic API 키 설정(그 전까지 AI 확인은 오류)
 - [ ] 서버 `.env`에 `APPLE_APP_ID_SCAM=<앱 숫자 ID>` 추가 (프로덕션 구매 검증용)
 - [x] (2026-10-29 확인, 200 OK) `apps_api/site/scam/` 페이지를 https://scamsense.namu3gru.com 에 배포 후 https://scamsense.namu3gru.com/privacy , /terms , /support 열리는지 확인
 - [ ] (웹) **앱 개인정보(App Privacy) 답변**: 추적 안 함. 수집 항목 → "기타 사용자 콘텐츠", "사진 또는 비디오"(스크린샷), "기기 ID", "구입 내역" 모두 **앱 기능 목적, 사용자와 연결 안 됨** (IP 주소는 남용 방지용 하루 횟수만 세고 내용은 저장하지 않음)
@@ -311,5 +312,5 @@ ScamSense gives an AI second opinion on whether a pasted message, link, phone nu
 ## 11. 알려진 한계
 - 시뮬레이터를 `simctl`로 실행하면 StoreKit 상품이 로드되지 않아 페이월은 폴백 가격으로 표시됩니다(정상). Xcode ▶ 실행 시에는 `Products.storekit`으로 구매 테스트 가능.
 - 목 서버는 어떤 입력이든 같은 샘플(통행료 사기, 영어)을 돌려줍니다. 실제 판정 품질은 TestFlight에서 확인하세요.
-- 서버는 구독 거래의 만료일(expiresDate)까지만 Pro로 인정합니다. Apple 결제 유예 기간(갱신 결제 실패 후 재시도 중)에는 앱은 Pro로 표시하지만 서버는 무료 한도를 적용해, 앱이 "구매 복원" 안내 오류를 보여 줍니다. 유예 기간을 켜려면 서버가 갱신 정보(renewalInfo의 gracePeriodExpiresDate)도 확인해야 합니다.
+- 결제 유예 기간: 앱은 StoreKit 상태 `.inGracePeriod`를 Pro로 보고, 서버에는 거래와 함께 갱신 정보(`signed_renewal_info`)를 보내 서버도 유예 종료일까지 Pro로 인정합니다.
 - 일부 시뮬레이터는 이모지 글꼴을 못 그려 퀴즈 메시지 속 이모지가 "?"로 보일 수 있습니다(실기기는 정상).

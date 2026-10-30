@@ -2,9 +2,10 @@ import Foundation
 
 /// Everything the owner may need to change before release lives here.
 enum AppConfig {
-    /// Shared app token for the backend (APP_TOKEN in apps_api/.env).
-    /// Paste the real value here before submitting to the App Store.
-    static let appToken = "REPLACE_WITH_APP_TOKEN"
+    /// Shared app token for the backend (APP_TOKEN in apps_api/.env). It is never committed: the build
+    /// setting APP_TOKEN (default REPLACE_WITH_APP_TOKEN) lands in Info.plist as "AppToken", and
+    /// ios/release.sh passes the real value from ~/.appstoreconnect/apps_api_token.
+    static let appToken = Bundle.main.object(forInfoDictionaryKey: "AppToken") as? String ?? "REPLACE_WITH_APP_TOKEN"
 
     static let defaultBaseURL = "https://api.namu3gru.com"
     static let slug = "scam"

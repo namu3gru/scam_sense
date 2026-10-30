@@ -102,9 +102,9 @@ final class AppModel {
     var showUpgradeBanner: Bool { !isPro && checksCompleted >= 2 && !bannerDismissed }
 
     func start() async {
-        store.onSignedTransaction = { [weak self] jws in
+        store.onSignedTransaction = { [weak self] jws, renewal in
             guard let self else { return }
-            if let status = try? await self.api.redeem(signedTransaction: jws) { self.quota = status }
+            if let status = try? await self.api.redeem(signedTransaction: jws, signedRenewalInfo: renewal) { self.quota = status }
         }
         store.start()
         quiz.ensureToday()
