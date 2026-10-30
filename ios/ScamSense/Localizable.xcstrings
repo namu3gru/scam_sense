@@ -3142,6 +3142,16 @@
           }
         }
       }
+    },
+    "AI model": {
+      "localizations": {
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 모델"
+          }
+        }
+      }
     }
   },
   "version": "1.0"

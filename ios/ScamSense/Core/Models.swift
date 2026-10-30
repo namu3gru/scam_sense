@@ -132,14 +132,28 @@ struct QuotaStatus: Codable, Hashable {
     var remaining: Int
     var period: String
     var resetsAt: Double
+    var aiModel: AIModelInfo?
 
     enum CodingKeys: String, CodingKey {
         case pro, limit, used, remaining, period
         case proUntil = "pro_until"
         case resetsAt = "resets_at"
+        case aiModel = "ai_model"
     }
 
     var resetsDate: Date { Date(timeIntervalSince1970: resetsAt) }
+}
+
+/// The AI model the server currently uses (GET /status `ai_model`), shown in Settings. It follows any server-side
+/// model change without an app update; the last value seen is kept for offline display.
+struct AIModelInfo: Codable, Hashable {
+    var id: String
+    var name: String
+    var provider: String
+
+    var label: String { "\(name) · \(provider)" }
+    static let cacheKey = "aiModelLabel"
+    static let fallbackLabel = "Claude · Anthropic"
 }
 
 struct RunResponse: Codable {

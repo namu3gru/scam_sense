@@ -53,6 +53,7 @@ struct SettingsView: View {
                     } label: {
                         Label("Country", systemImage: "globe.americas.fill")
                     }
+                    .tint(Theme.subtle)  // value in gray like the other rows
                     .frame(minHeight: 44)
                     Toggle(isOn: $app.largeText.animation()) {
                         Label("Large text mode", systemImage: "textformat.size")
@@ -91,6 +92,8 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    AIModelRow(live: app.quota?.aiModel)
+                        .frame(minHeight: 44)
                     Button { showConsentInfo = true } label: {
                         Label("What we send to the AI", systemImage: "cpu")
                     }
@@ -98,6 +101,7 @@ struct SettingsView: View {
                     if app.consentGiven {
                         Button(role: .destructive) { app.consentGiven = false } label: {
                             Label("Withdraw AI consent", systemImage: "hand.raised.slash")
+                                .labelStyle(.automatic)  // stays red
                         }
                         .frame(minHeight: 44)
                     }
@@ -132,6 +136,8 @@ struct SettingsView: View {
                         .padding(.top, 8)
                 }
             }
+            .labelStyle(SettingsRowLabelStyle())
+            .tint(Theme.brand)
             .scrollContentBackground(.hidden)
             .background(Theme.bg.ignoresSafeArea())
             .navigationTitle(Text("Settings"))
@@ -209,6 +215,33 @@ struct SettingsView: View {
             restoreMessage = ok
                 ? String(localized: "Your Pro subscription is active on this iPhone.")
                 : String(localized: "We couldn't find an active subscription for this Apple Account.")
+        }
+    }
+}
+
+/// Settings row naming the AI model the server uses right now (updates by itself when the server switches models).
+struct AIModelRow: View {
+    var live: AIModelInfo?
+    @AppStorage(AIModelInfo.cacheKey) private var cached = AIModelInfo.fallbackLabel
+
+    var body: some View {
+        HStack {
+            Label("AI model", systemImage: "cpu")
+            Spacer()
+            Text(verbatim: live?.label ?? cached).foregroundStyle(Theme.subtle)
+        }
+        .onAppear { if let live { cached = live.label } }
+        .onChange(of: live) { _, m in if let m { cached = m.label } }
+    }
+}
+
+/// Every settings row looks the same: ink text, brand-blue icon (buttons and links would otherwise turn all blue).
+struct SettingsRowLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Label {
+            configuration.title.foregroundStyle(Theme.ink)
+        } icon: {
+            configuration.icon.foregroundStyle(Theme.brand)
         }
     }
 }
