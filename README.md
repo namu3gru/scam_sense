@@ -40,7 +40,7 @@
 | `com.namu3gru.ScamSense.pro.monthly` | 1개월 | $4.99 | ₩6,900 | |
 
 **무료 vs Pro**
-- 무료: AI 확인 **주 3회 (서버에서 강제)**, 퀴즈·배우기 무제한, 기록 최근 10개, 가족 경고 템플릿 2개
+- 무료: AI 확인 **주 2회 (서버에서 강제)**, 퀴즈·배우기 무제한, 기록 최근 10개, 가족 경고 템플릿 2개
 - Pro: 하루 5회 확인(서버 강제), 전체 기록, 가족 경고 템플릿 8개 전부
 
 **전환 장치**
@@ -208,7 +208,7 @@ LEARN THE TRICKS
 PROTECT A PARENT
 Family safety habits (like a family safe word) and an invite message to help your parents get set up.
 
-FREE: 3 checks every week, unlimited quiz and learning.
+FREE: 2 checks every week, unlimited quiz and learning.
 SCAMSENSE PRO: 5 checks a day, full history and ready-to-send family warnings. Monthly or yearly with a 7-day free trial.
 
 Payment is charged to your Apple Account at confirmation of purchase (after the free trial, if any). Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel anytime in your App Store account settings.
@@ -252,7 +252,7 @@ Terms: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 부모님 지키기
 가족 확인 암호 같은 안전 습관과 부모님께 보내는 추천 메시지.
 
-무료: 매주 3회 확인, 퀴즈·학습 무제한
+무료: 매주 2회 확인, 퀴즈·학습 무제한
 스캠센스 Pro: 하루 5회 확인, 전체 기록, 가족 경고 메시지. 월간 또는 연간(7일 무료 체험).
 
 결제는 구매 확정 시(무료 체험 후) Apple 계정으로 청구되며, 현재 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신됩니다. App Store 계정 설정에서 언제든 관리·해지할 수 있어요.
@@ -271,7 +271,7 @@ ScamSense gives an AI second opinion on whether a pasted message, link, phone nu
 
 - No account or login is needed. Launch the app, finish the short onboarding (the demo uses a built-in sample, no network call), then on the Check tab tap "Paste" or type any text, e.g. "Toll Services: you owe $6.99, pay at tollpay-renew.top", and tap "Check it". Results take 15-25 seconds.
 - Before the first AI request the app shows a consent screen explaining exactly what is sent (text/screenshot), to whom (our server and Anthropic's Claude AI), that it is not stored or used for ads, and requires an explicit "Agree" tap (Guideline 5.1.2(i)).
-- Free users get 3 checks per week (enforced by our server). The quiz and learning content are free. Pro subscription: monthly or yearly with a 7-day free trial; Restore Purchases is on the paywall and in Settings.
+- Free users get 2 checks per week (enforced by our server). The quiz and learning content are free. Pro subscription: monthly or yearly with a 7-day free trial; Restore Purchases is on the paywall and in Settings.
 - The app never opens links contained in the user's message. Report links (e.g. reportfraud.ftc.gov) open in Safari only when tapped.
 - The clipboard is read only when the user taps the system Paste button.
 - Privacy policy: https://scamsense.namu3gru.com/privacy  Support: support@namu3gru.com

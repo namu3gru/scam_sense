@@ -188,7 +188,7 @@ struct SettingsView: View {
                     Text("\(q.remaining) of \(q.limit) free checks left this week")
                         .font(.subheadline).foregroundStyle(Theme.subtle)
                 } else {
-                    Text("3 free checks every week").font(.subheadline).foregroundStyle(Theme.subtle)
+                    Text("2 free checks every week").font(.subheadline).foregroundStyle(Theme.subtle)
                 }
             }
         }

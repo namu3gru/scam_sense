@@ -195,13 +195,13 @@
         }
       }
     },
-    "3 free checks every week": {
+    "2 free checks every week": {
       "extractionState": "extracted_with_value",
       "localizations": {
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "매주 무료 확인 3회"
+            "value": "매주 무료 확인 2회"
           }
         }
       }
@@ -3033,13 +3033,13 @@
         }
       }
     },
-    "You've used this week's 3 free checks": {
+    "You've used this week's 2 free checks": {
       "extractionState": "extracted_with_value",
       "localizations": {
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이번 주 무료 확인 3회를 모두 사용했어요"
+            "value": "이번 주 무료 확인 2회를 모두 사용했어요"
           }
         }
       }

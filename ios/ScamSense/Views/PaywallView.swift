@@ -65,7 +65,7 @@ struct PaywallView: View {
         VStack(spacing: 10) {
             LogoMark(size: 52)
             if reason == .limit {
-                Text("You've used this week's 3 free checks")
+                Text("You've used this week's 2 free checks")
                     .font(.system(.headline, design: .rounded))
                     .foregroundStyle(Theme.gold)
                     .multilineTextAlignment(.center)

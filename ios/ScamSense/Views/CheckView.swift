@@ -445,7 +445,7 @@ struct CheckView: View {
     }
 }
 
-/// "2 of 3 free checks left this week" / "Pro · 5 checks a day".
+/// "1 of 2 free checks left this week" / "Pro · 5 checks a day".
 struct QuotaPill: View {
     @Environment(AppModel.self) private var app
 
@@ -460,7 +460,7 @@ struct QuotaPill: View {
                 Text("\(q.remaining) of \(q.limit) free checks left this week")
             } else {
                 Image(systemName: "gift.fill").foregroundStyle(Theme.brand)
-                Text("3 free checks every week")
+                Text("2 free checks every week")
             }
         }
         .font(.system(.subheadline, design: .rounded, weight: .semibold))
